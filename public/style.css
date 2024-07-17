@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+nav#upper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+}
+.hover-effect {
+  transition: background 0.3s;
+}
+
+.hover-effect:hover {
+  background: rgb(214, 214, 214);
+}
+
+.link {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+nav#upper a {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body {
+  text-align: center;
+  padding-top: 20px;
+
+  width: 95%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+
+  overflow-x: hidden;
+}
+
+body > a {
+  display: inline-block;
+  
+  margin: 0 !important;
+  transform: none !important;
+}
+
+body > *:not(hr) {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+#message {
+  width: 60%;
+  background: #f59999;
+  border: 1px solid #ff1c1c;
+
+  margin-top: 10px;
+  padding: 10px;
+}
+
+form {
+  width: 90%;
+}
+
+form#main {
+  display: flex;
+  flex-direction: column;
+
+  height: 80vh;
+}
+
+form * {
+  padding: 10px;
+}
+
+form#main * {
+  margin-top: 10px;
+}
+
+form input,
+form button {
+  height: 50px;
+}
+
+form#main textarea {
+  flex: 1;
+  font-family: monospace;
+  resize: none;
+}
+
+hr {
+  margin: 30px;
+}
+
+#texts {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+}
+
+#texts a {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#texts:last-child {
+  margin-bottom: 20px;
+}
+
+.text-card {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #000;
+
+  width: 100%;
+}
+
+.text-card h2 {
+  margin-bottom: 5px;
+}
+
+.readonly {
+  outline: none;
+}
+
+input.readonly {
+  border: none;
+  font-weight: bold;
+  font-size: large;
+}
+
+.readonly:focus {
+  outline: none;
+}
+
+form#search-form {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+form#search-form button {
+  width: 80px;
+}
+
+form#search-form input {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.width-100-centered {
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copybin</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+  <a href="/"><h1>Copybin</h1></a>
+  <div class="width-100-centered">
+    <h2>Publish text for free!</h2>
+  </div>
+
+  {{#if texts}}
+
+  <nav id="upper">
+    <a href="/" class="hover-effect link">Home</a>
+    <a href="#search" class="hover-effect link">Search</a>
+    <a href="#discover" class="hover-effect link">Discover</a>
+  </nav>
+
+  {{/if}}
+
+  {{#if message}}
+    <div id="message">
+      {{message}}
+    </div>
+  {{/if}}
+
+  {{#if form}}
+
+  <form action="send" method="post" id="main">
+    <input class="{{#if readonly}} readonly {{/if}}" type="text" name="name" placeholder="Text name" {{#if name}} value="{{name}}" {{/if}} required {{#if readonly}} readonly {{/if}}>
+    <textarea class="{{#if readonly}} readonly {{/if}}" name="text" id="text" required {{#if readonly}} readonly {{/if}}>{{#if text}} {{text}} {{/if}}</textarea>
+
+    {{#if submit}}
+    <button type="submit">Post</button>
+    {{/if}}
+  </form>
+
+  {{/if}}
+
+  {{#if texts }}
+
+  <hr>
+
+  <h1 id="search">Search</h1>
+
+  <form action="/search" id="search-form">
+    <input name="name" type="text" placeholder="Text name" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h1 id="discover">Discover</h1>
+
+  <h3>
+    {{#if form}}
+    Latest uploads
+    {{else}}
+    All texts
+    {{/if}}
+  </h3>
+
+  {{#if form}}
+  <a href="/all" class="hover-effect link">View all</a>
+  {{else}}
+  <a href="/#discover" class="hover-effect link">View latest</a>
+  {{/if}}
+
+  <div id="texts">
+    {{#each texts}}
+
+    <a href="/id?id={{ id }}">
+      <div class="text-card hover-effect">
+        <h2>{{ name }}</h2>
+        <p>{{ text }}</p>
+      </div>
+    </a>
+
+    {{/each}}
+  </div>
+
+  {{/if}}
+</body>
+</html>
